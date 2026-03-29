@@ -16,11 +16,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to InfinityFree via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /scriptmaster.wuaze.com/htdocs/
+          server-dir: /htdocs/
           timeout: 86400000
-          log-level: standard
+          log-level: detailed
