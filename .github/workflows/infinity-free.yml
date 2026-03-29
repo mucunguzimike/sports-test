@@ -15,6 +15,11 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
+      - name: Debug secrets
+        run: |
+          echo "Username secret exists: ${{ secrets.FTP_USERNAME != '' }}"
+          echo "Password secret exists: ${{ secrets.FTP_PASSWORD != '' }}"
+
       - name: Deploy to InfinityFree via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
